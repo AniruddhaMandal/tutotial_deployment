@@ -55,7 +55,7 @@ CATEGORICAL_VARS_WITH_NA = [
 
 TEMPORAL_VARS = "YearRemodAdd"
 
-NUMERICAL_LOG_VARS = [ "LotFrontage", "1stFlrSF", "GrLivArea"]
+NUMERICALS_LOG_VARS = [ "LotFrontage", "1stFlrSF", "GrLivArea"]
 
 CATEGORICAL_VARS = [
     "MSZoning",

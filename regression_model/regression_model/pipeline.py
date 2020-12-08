@@ -31,7 +31,7 @@ price_pipe = Pipeline(
         ),
         (
             "log_transformer",
-            pp.LogTransformer(variables=config.NUMERICAL_LOG_VARS),
+            pp.LogTransformer(variables=config.NUMERICALS_LOG_VARS),
         ),
         (
             "scaler",

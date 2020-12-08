@@ -13,3 +13,14 @@ def test_make_single_prediction():
     assert subject is not None
     assert isinstance(subject.get('predictions')[0], float)
     assert math.ceil(subject.get('predictions')[0]) == 112476
+
+def test_make_multiple_prediction():
+
+    test_data = load_dataset(file_name='test.csv')
+    original_data_length = len(test_data)
+    multiple_test_json = test_data.to_json(orient='records')
+
+    subject = make_prediction(input_data=multiple_test_json)
+
+    assert subject is not None
+    assert len(subject.get('predictions')) != original_data_length
