@@ -89,7 +89,7 @@ class RareLabelCategoricalEncoder(BaseEstimator, TransformerMixin):
         self.encoder_dict_ = {}
 
         for var in self.variables:
-            t = pd.Series(X[var].var_counts() / np.float(len(X)))
+            t = pd.Series(X[var].value_counts() / np.float(len(X)))
             self.encoder_dict_[var] = list(t[t >= self.tol].index)
 
         return self
@@ -98,7 +98,7 @@ class RareLabelCategoricalEncoder(BaseEstimator, TransformerMixin):
         X = X.copy()
         for feature in self.variables:
             X[feature] = np.where(
-                X[feature].isin(self.encoder_dict_[feature], "Rare")
+                X[feature].isin(self.encoder_dict_[feature]), X[feature], "Rare"
             )
         return X
 class CategoricalEncoder(BaseEstimator, TransformerMixin):
@@ -137,7 +137,7 @@ class CategoricalEncoder(BaseEstimator, TransformerMixin):
         f"trasforming categorical variables: {vars_.keys()}"
         )
 
-    return X
+        return X
 
 class LogTransformer(BaseEstimator, TransformerMixin):
     """Logarithm transformer."""
@@ -156,7 +156,7 @@ class LogTransformer(BaseEstimator, TransformerMixin):
 
         if not (X[self.variables] > 0).all().all():
             vars_ = self.variables[(X[self.variables] <= 0).any()]
-            rais ValueError(
+            raise ValueError(
                 f"Variables contain zero or negative values,"
                 f"can't apply log for vars: {vars_}"
             )
@@ -166,7 +166,7 @@ class LogTransformer(BaseEstimator, TransformerMixin):
 
         return X
 
-class DropUnecessessaryFeatures(BestEstimator, TransformerMixin):
+class DropUnecessessaryFeatures(BaseEstimator, TransformerMixin):
     def __init__(self, variables_to_drop=None):
         self.variables = variables_to_drop
     

@@ -9,7 +9,7 @@ DATASET_DIR = PACKAGE_ROOT / "datasets"
 # data
 TESTING_DATA_FILE = 'test.csv'
 TRAINING_DATA_FILE = 'train.csv'
-TARGET = 'SalePraice'
+TARGET = 'SalePrice'
 
 # variables
 FEATURES = [
@@ -34,7 +34,7 @@ FEATURES = [
     "GarageType",
     "GarageFinish",
     "GarageCars",
-    "PaveDrive",
+    "PavedDrive",
     "LotFrontage",
     "YrSold",
 ]
@@ -67,16 +67,16 @@ CATEGORICAL_VARS = [
     "HeatingQC",
     "CentralAir",
     "KitchenQual",
-    "FireplaceQU",
+    "FireplaceQu",
     "GarageType",
     "GarageFinish",
-    "PaveDrive",
+    "PavedDrive",
 ]
 
 NUMERICAL_NA_NOT_ALLOWED = [
     feature
-    for feature in features 
+    for feature in  FEATURES 
     if feature not in CATEGORICAL_VARS + NUMERICAL_VARS_WITH_NA
     ]
 
-CATEGORICAL_NA_NOT_ALLOWED = [ feature for feature in CATEGORICAL_VARS if features not in CATEGORICAL_VARS_WITH_NA]
+CATEGORICAL_NA_NOT_ALLOWED = [ feature for feature in CATEGORICAL_VARS if feature not in CATEGORICAL_VARS_WITH_NA]
