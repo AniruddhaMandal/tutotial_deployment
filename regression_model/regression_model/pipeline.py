@@ -4,6 +4,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 from regression_model.processing import preprocessors as pp
 from regression_model.config import config
+from regression_model.processing import features
 
 price_pipe = Pipeline(
     [
@@ -31,7 +32,7 @@ price_pipe = Pipeline(
         ),
         (
             "log_transformer",
-            pp.LogTransformer(variables=config.NUMERICALS_LOG_VARS),
+            features.LogTransformer(variables=config.NUMERICALS_LOG_VARS),
         ),
         (
             "scaler",
