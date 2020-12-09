@@ -6,6 +6,10 @@ from regression_model.processing import preprocessors as pp
 from regression_model.config import config
 from regression_model.processing import features
 
+import logging 
+
+_logging = logging.getLogger(__name__)
+
 price_pipe = Pipeline(
     [
         (
