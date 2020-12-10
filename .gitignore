@@ -4,5 +4,118 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# C extensions
+*.so
+
+# Distributions / packaging
+.python
+build/
+devlop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.eggs-info/
+.installed.cfg
+*egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+
+# PyInstaller
+# Usually these files are written by a python script from a template
+# berfore PyInstaller builds the exe, so as to inject dare/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs 
+pip-log.txt
+pip-delete-this-directory.txt 
+
+
 # Unit test / coverage report 
+htmlcov/
 .tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot 
+
+# Django stuff:
+*.log 
+local_settings.py 
+db.sqlite3
+
+# Flask Stuff:
+instance/
+.webassets-cache 
+
+# Scrapy stuff:
+.scrapy 
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder 
+targer/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schebule file 
+celeybeat-schedule
+
+# SagMath parsed files
+*.sage.py 
+
+# Enviroments
+.env 
+.venv 
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder Project settings
+.spyderperoject
+.spyproject 
+
+
+# Rope project settings
+.roperproject
+
+# mkdocs documentation
+/site 
+
+# mypy
+.mypy_cache/
+
+# pycharm
+.idea/
+
+# pickle file
+*.pkl 
+
+#datafiles
+packages/regression_model/regression_model/datasets/*.csv
+packages/regression_model/regression_model/datasets/*.zip
+packages/regression_model/datasets/*.txt 
