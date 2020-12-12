@@ -13,7 +13,7 @@ AUTHOR = 'Aniruddha Mandal'
 REQUIRES_PYTHON = '>=3.6.0'
 
 # What packages are required for this model to be executed?
-def list_reqs(fname='requirments.txt'):
+def list_reqs(fname='requirements.txt'):
     with open(fname) as fd:
         return fd.read().splitlines()
 

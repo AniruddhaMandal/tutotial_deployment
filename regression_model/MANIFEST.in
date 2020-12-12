@@ -9,7 +9,7 @@ include regression_model/datasets/test.csv
 include regression_model/trained_models/*.pkl
 include regression_model/VERSION
 
-include ./requirments.txt 
+include ./requirements.txt 
 exclude *.log
 
 recursive-exclude * __pycache__
