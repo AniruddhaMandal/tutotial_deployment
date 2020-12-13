@@ -5,10 +5,22 @@ from regression_model import __version__ as _version
 import json 
 import math 
 
+from api import __version__ as api_version
+
 def test_health_endpoint_returns_200(flask_test_client):
     response = flask_test_client.get('/health')
 
     assert response.status_code == 200
+
+
+def test_version_endpoint_returns_version(flask_test_client):
+    response = flask_test_client.get('/version')
+    
+    assert response.status_code == 200
+    response_json = json.loads(response.data)
+    assert response_json['model_version'] == _version
+    assert response_json['api_version'] == api_version
+
 
 def test_prediction_endpoint_return_prediction(flask_test_client):
     """ Giver Load the test data from the `regression_model` package thisis important as it makes it hatder for the test data versions to get confused by not spreading it accross packages."""
