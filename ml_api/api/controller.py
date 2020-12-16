@@ -35,7 +35,7 @@ def predict():
         result = make_prediction(input_data = input_data)
         _logger.debug(f'Outputs: {result}\n')
 
-        predictions = result.get('predictions')[0]
+        predictions = result.get('predictions').tolist()
         version = result.get('version')
 
         return jsonify({'predictions': predictions,
