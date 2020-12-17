@@ -9,13 +9,13 @@ jobs:
       - run:
           name: Running tests
           command: |
-          virtualenv venv
-          . venv/bin/activate
-          pip install --upgrade pip
-          pip install -r regression_model/requirements.txt
-          chmod +x ./scripts/fetch_kaggle_dataset.sh
-          ./scripts/fetch_kaggle_dataset.sh
-          py.test -vv regression_model/tests
+            virtualenv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r regression_model/requirements.txt
+            chmod +x ./scripts/fetch_kaggle_dataset.sh
+            ./scripts/fetch_kaggle_dataset.sh
+            py.test -vv regression_model/tests
 
 workflows:
   version: 2
