@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/aniruddhamandal/Documents/Machine Learning/venv/bin/python",
+    "python.pythonPath": "/home/aniruddhamandal/Documents/Machine Learning/envMachineLearning/bin/python",
     "python.testing.pytestArgs": [
         "ml_api"
     ],
