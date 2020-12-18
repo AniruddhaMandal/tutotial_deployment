@@ -6,4 +6,4 @@ marshmallow==2.17.0
 
 # local regression_model package
 # update with your local path
--e "/home/aniruddhamandal/Documents/Machine Learning/turotial_deployment/regression_model"
+regression_model==0.1.0
