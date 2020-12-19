@@ -46,6 +46,7 @@ jobs:
       - run: 
           name: Publish model
           command: |
+            sudo apt install ruby
             gem install package_cloude
             . venv/bin/activate
             chmod +x ./scripts/fetch_kaggle_dataset.sh ./scripts/publish_model.sh
