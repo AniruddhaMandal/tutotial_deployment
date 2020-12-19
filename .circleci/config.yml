@@ -46,12 +46,13 @@ jobs:
       - run: 
           name: Publish model
           command: |
-            - gem install package_cloude
+            gem install package_cloude
             . venv/bin/activate
             chmod +x ./scripts/fetch_kaggle_dataset.sh ./scripts/publish_model.sh
             ./scripts/fetch_kaggle_dataset.sh
             PYTHONPATH=./regression_model python3 regression_model/regression_model/train_pipeline.py
-            - package_cloude push Aniruddha_Mandal/regression_model/os/version regression_model
+            package_cloude push Aniruddha_Mandal/regression_model/os/version regression_model
+            curl -s https://packagecloud.io/install/repositories/Aniruddha_Mandal/regression_model/script.python.sh | bash
             
 workflows:
   version: 2
