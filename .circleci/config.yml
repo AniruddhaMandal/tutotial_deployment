@@ -49,7 +49,7 @@ jobs:
           command: |
             sudo apt update
             sudo apt install ruby
-            gem install package_cloud
+            sudo gem install package_cloud
             . venv/bin/activate
             chmod +x ./scripts/fetch_kaggle_dataset.sh ./scripts/publish_model.sh
             ./scripts/fetch_kaggle_dataset.sh
