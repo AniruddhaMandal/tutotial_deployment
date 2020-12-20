@@ -46,7 +46,7 @@ jobs:
       - run: 
           name: Publish model
           command: |
-            .venv/bin/activate
+            . venv/bin/activate
             chmod +x ./scripts/fetch_kaggle_dataset.sh ./scripts/publish_model.sh
             ./scripts/publish_model.sh regression_model/
 workflows:
