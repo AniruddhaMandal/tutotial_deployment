@@ -8,3 +8,4 @@ pytest
 setuptools 
 wheel
 kaggle
+twine

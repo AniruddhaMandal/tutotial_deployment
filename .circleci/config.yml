@@ -47,16 +47,11 @@ jobs:
       - run: 
           name: Publish model
           command: |
-            sudo apt update
-            sudo apt install ruby
-            sudo gem install package_cloud
             . venv/bin/activate
-            chmod +x ./scripts/fetch_kaggle_dataset.sh ./scripts/publish_model.sh
+            chmod +x ./scripts/fetch_kaggle_dataset.sh
             ./scripts/fetch_kaggle_dataset.sh
             PYTHONPATH=./regression_model python3 regression_model/regression_model/train_pipeline.py
-            package_cloude push Aniruddha_Mandal/regression_model/os/version regression_model
-            
-            
+            twine upload regression_model/dist/*
 workflows:
   version: 2
   test-all:
