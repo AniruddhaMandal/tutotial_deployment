@@ -51,13 +51,13 @@ jobs:
             chmod +x ./scripts/fetch_kaggle_dataset.sh
             ./scripts/fetch_kaggle_dataset.sh
             PYTHONPATH=./regression_model python3 regression_model/regression_model/train_pipeline.py
-            PYTHONPATH=./regression_model python3 regression_model/setup.py sdist bdist-wheel
+            PYTHONPATH=./regression_model python3 setup.py sdist bdist-wheel
             twine upload regression_model/dist/*
 workflows:
   version: 2
   test-all:
     jobs:
-      - test_regression_model
+      
       - test_ml_api
       - train_and_upload_regression_model
       - test_ml_api:
