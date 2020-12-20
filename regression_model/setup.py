@@ -5,7 +5,7 @@ from pathlib import Path
 from setuptools import find_packages, setup 
 
 # Package meta-data.
-NAME = 'regression-model-AniruddhaMandal'
+NAME = 'regression_model'
 DESCRIPTION = 'Train and deploy regression model.'
 EMAIL = 'ani96dh@gmail.com'
 URL = 'https://github.com/AniruddhaMandal/deploying-machine-learning-models'
@@ -55,7 +55,7 @@ setup(
     python_requires = REQUIRES_PYTHON,
     url = URL,
     package = find_packages(exclude=('tests',)),
-    package_data = {'regression-model-AniruddhaMandal': ['VERSION']},
+    package_data = {'regression_model': ['VERSION']},
     install_requires = list_reqs(),
     extras_require = {},
     include_package_data = True,
