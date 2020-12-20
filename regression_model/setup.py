@@ -5,7 +5,7 @@ from pathlib import Path
 from setuptools import find_packages, setup 
 
 # Package meta-data.
-NAME = 'regression_model'
+NAME = 'regression-model-AniruddhaMandal'
 DESCRIPTION = 'Train and deploy regression model.'
 EMAIL = 'ani96dh@gmail.com'
 URL = 'https://github.com/AniruddhaMandal/deploying-machine-learning-models'
