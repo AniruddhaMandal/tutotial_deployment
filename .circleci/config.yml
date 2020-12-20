@@ -50,7 +50,7 @@ jobs:
             chmod +x ./scripts/fetch_kaggle_dataset.sh ./scripts/publish_model.sh
             cd regression_model
             python3 setup.py sdist bdist_wheel
-            ./../scripts/publish_model.sh dist/*
+            ./../scripts/publish_model.sh dist
 workflows:
   version: 2
   test-all:
