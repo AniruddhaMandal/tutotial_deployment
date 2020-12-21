@@ -1,76 +1,24 @@
-import io
-import os 
-from pathlib import Path 
-
-from setuptools import find_packages, setup 
-
-# Package meta-data.
-NAME = 'regression_model'
-DESCRIPTION = 'Train and deploy regression model.'
-EMAIL = 'ani96dh@gmail.com'
-URL = 'https://github.com/AniruddhaMandal/deploying-machine-learning-models'
-AUTHOR = 'Aniruddha Mandal'
-REQUIRES_PYTHON = '>=3.6.0'
-
-# What packages are required for this model to be executed?
-def list_reqs(fname='requirements.txt'):
-    with open(fname) as fd:
-        return fd.read().splitlines()
+from setuptools import setup, find_packages
 
 
-# The rest you shouldn't have to touch to :)
-#----------------------------------------------
-# Except, parhaps the License and Trove Classifiers!
-# If you do change the License, remember to change the 
-# Trove Classifier for that!
+with open('requirements.txt',"r") as f:
+    requirements = f.read().splitlines()
 
-here = os.path.abspath(os.path.dirname(__file__))
-# Import the README  and use it as the long-description.
-# Note: this will only work if 'README.md' is present in your MANIFEST.in file!
+with open("README.md","r") as f:
+    readme = f.read()
 
-try:
-    with io.open(os.path.join(here, 'README.md')) as f:
-        long_description = '/n' + f.read()
+with open('regression_model/VERSION', 'r') as f:
+    version = f.read()
 
-except FileNotFoundError:
-    long_description = DESCRIPTION
-
-# Load the package's __version__.py module as a dictionary
-ROOT_DIR = Path(__file__).resolve().parent
-PACKAGE_DIR = ROOT_DIR / NAME 
-about = {}
-with open(PACKAGE_DIR / 'VERSION') as f:
-    _version = f.read().strip()
-    about['__version__'] = _version 
-
-# Where the magic happens:
 setup(
-    name = NAME,
-    version = about['__version__'],
-    description = DESCRIPTION, 
-    long_description = long_description,
-    long_description_content_type =  'text/markdown',
-    author = AUTHOR,
-    author_email = EMAIL,
-    python_requires = REQUIRES_PYTHON,
-    url = URL,
-    package = find_packages(exclude=('tests',)),
-    package_data = {'regression_model': ['VERSION']},
-    install_requires = list_reqs(),
-    extras_require = {},
-    include_package_data = True,
-    license = 'MIT',
-    classifiers=[
-        # Trove Classifires
-        # Full list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy'
-    ],
-
+    name = "regression_AniruddhaMandal",
+    version = version,
+    author = "Aniruddha Mandal",
+    author_email = "ani96dh@gmail.com",
+    description = "Testing pourpose",
+    long_description = readme,
+    long_description_content_type = 'text/markdown',
+    install_requires = requirements,
+    packages = find_packages(exclude=('tests',)),
+    python_requires = ">=3.6",
 )
