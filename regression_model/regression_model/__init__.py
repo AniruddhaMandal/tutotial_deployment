@@ -1,8 +1,10 @@
-import logging 
+import logging
+from pathlib import Path 
 from regression_model.config import config 
 from regression_model.config import logging_config
 
-VERSION_PATH = config.PACKAGE_ROOT / 'VERSION'
+PACKAGE_ROOT = Path(__file__).resolve().parent
+VERSION_PATH = PACKAGE_ROOT / 'VERSION'
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)

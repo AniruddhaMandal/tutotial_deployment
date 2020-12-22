@@ -8,6 +8,8 @@ include regression_model/datasets/train.csv
 include regression_model/datasets/test.csv 
 include regression_model/trained_models/*.pkl
 include regression_model/VERSION
+global-include VERSION
+global-include __init__.py
 
 include ./requirements.txt 
 exclude *.log
